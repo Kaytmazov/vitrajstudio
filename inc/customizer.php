@@ -24,6 +24,85 @@ function vitrajstudio_customize_register( $wp_customize ) {
 			'render_callback' => 'vitrajstudio_customize_partial_blogdescription',
 		) );
 	}
+
+	// Добавляем секцию настроек контактов
+  $wp_customize->add_section( 'contacts_options', array(
+      'title'     => 'Контакты',
+      'priority'  => 50
+    )
+  );
+  // Телефон
+  $wp_customize->add_setting( 'phone', array(
+      'default'            => '8 (8722) 92-44-11', // текст по умолчанию
+      'transport'          => 'refresh'
+    )
+  );
+  $wp_customize->add_control( 'phone', array(
+      'section'  => 'contacts_options', // id секции
+      'label'    => 'Телефон',
+      'type'     => 'text' // текстовое поле
+    )
+  );
+  // Адрес
+  $wp_customize->add_setting( 'street', array(
+      'default'            => 'г. Махачкала, ул.Энгельса, 1Д', // текст по умолчанию
+      'transport'          => 'refresh'
+    )
+  );
+  $wp_customize->add_control( 'street', array(
+      'section'  => 'contacts_options', // id секции
+      'label'    => 'Адрес',
+      'type'     => 'text' // текстовое поле
+    )
+  );
+  // Email
+  $wp_customize->add_setting( 'mail', array(
+      'default'            => 'vitrajstudio.vs@yandex.ru', // текст по умолчанию
+      'transport'          => 'refresh'
+    )
+  );
+  $wp_customize->add_control( 'mail', array(
+      'section'  => 'contacts_options', // id секции
+      'label'    => 'E-mail',
+      'type'     => 'text' // текстовое поле
+    )
+  );
+	// Instagram
+  $wp_customize->add_setting( 'instagram', array(
+      'default'            => 'https://www.instagram.com/', // текст по умолчанию
+      'transport'          => 'refresh'
+    )
+  );
+  $wp_customize->add_control( 'instagram', array(
+      'section'  => 'contacts_options', // id секции
+      'label'    => 'Instagram',
+      'type'     => 'text' // текстовое поле
+    )
+  );
+	// Вконтакте
+  $wp_customize->add_setting( 'vk', array(
+      'default'            => 'https://www.vk.com/', // текст по умолчанию
+      'transport'          => 'refresh'
+    )
+  );
+  $wp_customize->add_control( 'vk', array(
+      'section'  => 'contacts_options', // id секции
+      'label'    => 'Вконтакте',
+      'type'     => 'text' // текстовое поле
+    )
+  );
+  // Facebook
+  $wp_customize->add_setting( 'facebook', array(
+      'default'            => 'https://www.facebook.com/', // текст по умолчанию
+      'transport'          => 'refresh'
+    )
+  );
+  $wp_customize->add_control( 'facebook', array(
+      'section'  => 'contacts_options', // id секции
+      'label'    => 'Facebook',
+      'type'     => 'text' // текстовое поле
+    )
+  );
 }
 add_action( 'customize_register', 'vitrajstudio_customize_register' );
 

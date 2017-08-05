@@ -28,6 +28,26 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<div class="popup closed">
+	<div class="social-btns">
+		<a class="icon icon-insta" href="<?php echo get_theme_mod( 'instagram' ); ?>" target="_blank">
+			<svg>
+				<use xlink:href="<?php echo bloginfo('template_url'); ?>/img/sprite.svg#icon-instagram"></use>
+			</svg>
+		</a>
+		<a class="icon icon-vk" href="<?php echo get_theme_mod( 'vk' ); ?>" target="_blank">
+			<svg>
+				<use xlink:href="<?php echo bloginfo('template_url'); ?>/img/sprite.svg#icon-vk"></use>
+			</svg>
+		</a>
+		<a class="icon icon-fb" href="<?php echo get_theme_mod( 'facebook' ); ?>" target="_blank">
+			<svg>
+				<use xlink:href="<?php echo bloginfo('template_url'); ?>/img/sprite.svg#icon-facebook"></use>
+			</svg>
+		</a>
+	</div>
+</div>
+
 <?php wp_footer(); ?>
 
 </body>

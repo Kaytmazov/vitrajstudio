@@ -108,7 +108,36 @@ add_action( 'widgets_init', 'vitrajstudio_widgets_init' );
  * Enqueue scripts and styles.
  */
 function vitrajstudio_scripts() {
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap.min.css', array(), '3.3.7' );
+
+	wp_enqueue_style( 'slick', get_template_directory_uri() . '/libs/slick/slick.css', array(), '1.6.0' );
+
 	wp_enqueue_style( 'vitrajstudio-style', get_stylesheet_uri() );
+
+	wp_register_script('slick-js', get_template_directory_uri() . '/libs/slick/slick.min.js', array('jquery'), '1.6.0', true);
+  wp_enqueue_script('slick-js');
+
+	if ( is_front_page() ) {
+    wp_add_inline_script( 'slick-js', '
+      jQuery(".home-slider").slick({ 
+        autoplay: true, 
+				dots: true,
+				speed: 1500,
+				fade: true,
+				cssEase: "liner", 
+				responsive: [
+					{
+						breakpoint: 768,
+						settings: {
+							arrows: false
+						}
+					},
+				]
+      });'
+    );
+  }
+
+	wp_enqueue_script( 'app-js', get_template_directory_uri() . '/assets/js/dev/app.js', array('jquery'), null, true );
 
 	wp_enqueue_script( 'vitrajstudio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -119,6 +148,17 @@ function vitrajstudio_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'vitrajstudio_scripts' );
+
+/**
+ * Подключаем Google Fonts
+ */
+function include_google_fonts() {
+  if (!is_admin()) {
+    wp_register_style('googlefont', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=cyrillic', array(), null, 'all');
+    wp_enqueue_style('googlefont');
+  }
+}
+add_action('wp_enqueue_scripts', 'include_google_fonts');
 
 /**
  * Custom template tags for this theme.
@@ -140,4 +180,16 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
+}
+
+/**
+ * Отключаем Toolbar на сайте
+ */
+add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Зарегистрировать размер изображений для слайдера
+ */
+if ( function_exists( 'add_image_size' ) ) {
+  add_image_size( 'slider-photo', 1920, 800, true ); //(cropped)
 }

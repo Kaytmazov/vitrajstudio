@@ -1,8 +1,16 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	position: relative;
+	padding: 7px 0 8px;
+	text-align: center;
+
+	&__logo {
+		position: absolute;
+		top: 7px;
+		left: 20px;
+		opacity: 0;
+		visibility: hidden;
+		transition-duration: 0.3s;
+	}
 
 	ul {
 		display: none;
@@ -50,23 +58,40 @@
 	}
 
 	li {
-		float: left;
 		position: relative;
+		display: inline-block;
+		margin: 0 30px;
+		vertical-align: middle;
 
 		&:hover > a,
 		&.focus > a {
+			color: #f5ce07;
 		}
 	}
 
 	a {
 		display: block;
+		font-size: 13px;
+		font-weight: 300;
 		text-decoration: none;
+		text-transform: uppercase;
+		color: #fff;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+	}
+
+	.icon-tel {
+		position: absolute;
+		top: 7px;
+		right: 20px;
+		margin-top: 0;
+		opacity: 0;
+		visibility: hidden;
+		transition-duration: 0.3s;
 	}
 }
 

@@ -24,11 +24,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-@import "normalize";
-
-/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
@@ -67,3 +62,219 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+# Общие стили
+--------------------------------------------------------------*/
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+
+  svg {
+    width: 25px;
+    height: 25px;
+    fill: #fff;
+    transition-duration: 0.3s;
+  }
+
+  &-tel {
+    margin-top: 20px;
+
+    &:hover svg, 
+    &:focus svg {
+      fill: #41c8f5;
+    }
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+}
+
+.header-top {
+  padding: 15px 50px;
+  border-bottom: 1px solid #ccc;
+  transition-duration: 0.3s;
+}
+
+.site-header.scroll .header-top {
+  margin-top: -94px;
+}
+
+.site-header.scroll .main-navigation__logo, 
+.site-header.scroll .icon-tel {
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-branding {
+  text-align: center;
+}
+
+.custom-logo-link img {
+  width: 250px;
+}
+
+.header-feedback {
+  text-align: right;
+}
+
+/*--------------------------------------------------------------
+# Slick Slider
+--------------------------------------------------------------*/
+.slick-loading .slick-list {
+  background: #fff url('libs/slick/ajax-loader.gif') center center no-repeat;
+}
+
+.slick-slide:focus {
+  outline: none;
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  transform: translate(0, -50%);
+  display: block;
+  width: 40px;
+  height: 73px;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent url(img/sprite.png) no-repeat center;
+  opacity: 0.5;
+  transition-duration: 0.3s;
+}
+
+.slick-prev {
+  left: 8%;
+  background-position: 0 0;
+
+  &:hover, &:focus {
+    outline: none;
+    opacity: 1;
+  }
+
+  &.slick-disabled {
+    opacity: .25;
+  }
+}
+
+.slick-next {
+  right: 8%;
+  background-position: 0 -78px;
+
+  &:hover, &:focus {
+    outline: none;
+    opacity: 1;
+  }
+
+  &.slick-disabled {
+    opacity: .25;
+  }
+}
+
+/* Dots */
+.slick-dots {
+  position: absolute;
+  bottom: 40px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+
+  li {
+    position: relative;
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 0 8px;
+    padding: 0;
+    cursor: pointer;
+
+    button {
+      display: block;
+      width: 11px;
+      height: 11px;
+      padding: 0;
+      font-size: 0;
+      line-height: 0;
+      color: transparent;
+      background: rgba(255, 255, 255, 0.5);
+      border: 2px solid transparent;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      transition-duration: 0.3s;
+
+      &:hover, &:focus {
+        background-color: transparent;
+        outline: none;
+        border-color: #d3c1ad;
+        transform: scale(1.36);
+      }
+    }
+
+    &.slick-active button {
+      background-color: transparent;
+      outline: none;
+      border-color: #d3c1ad;
+      transform: scale(1.36);
+    }
+  }
+}
+
+
+
+
+.site-content {
+  margin-top: 150px;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 90px;
+  background-color: #000;
+  box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.3);
+
+  &.closed {
+    display: none;
+  }
+}
+
+.social-btns {
+  margin-top: 20px;
+  text-align: center;
+
+  .icon {
+    margin: 0 5px;
+  }
+}

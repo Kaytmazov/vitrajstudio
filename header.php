@@ -25,32 +25,52 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vitrajstudio' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+		<?php 
+		if ( is_front_page() ) : ?>
+			<h1 class="site-description visually-hidden"><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></h1>
+		<?php
+		endif; ?>
+		<div class="container-fluid">
+			<div class="header-top row">
+				<div class="col-sm-3">
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vitrajstudio' ); ?></button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
+				</div>
+				<div class="site-branding col-sm-6">
+					<?php
+					if( $logo = get_custom_logo() ) :
+						echo $logo;
+					else : ?>
+						<h2 class="site-title">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+						</h2>
+					<?php
+					endif; ?>
+				</div>
+				<div class="header-feedback col-sm-3">
+					<a class="icon icon-tel" href="tel:<?php echo get_theme_mod( 'phone' ); ?>">
+						<svg>
+							<use xlink:href="<?php echo bloginfo('template_url'); ?>/img/sprite.svg#icon-phone"></use>
+						</svg>
+					</a>
+				</div>
+			</div><!-- .site-branding -->
+			
+			<nav id="site-navigation" class="main-navigation row">
+				<img class="main-navigation__logo" src="<?php echo bloginfo('template_url'); ?>/img/nav-logo.png" width="23" height="26" alt="Логотип">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vitrajstudio' ); ?></button>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+				?>
+				<a class="icon icon-tel" href="tel:<?php echo get_theme_mod( 'phone' ); ?>">
+					<svg>
+						<use xlink:href="<?php echo bloginfo('template_url'); ?>/img/sprite.svg#icon-phone"></use>
+					</svg>
+				</a>
+			</nav><!-- #site-navigation -->
+		</div><!-- #container-fluid -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
