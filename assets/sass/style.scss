@@ -66,6 +66,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Общие стили
 --------------------------------------------------------------*/
+body {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -105,8 +111,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
   width: 100%;
   background-color: #000;
+  transition-duration: 0.3s;
+
+  &.scroll {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }
 
 .header-top {
@@ -152,28 +164,28 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 .slick-prev,
 .slick-next {
   position: absolute;
-  top: 50%;
+  top: 55%;
   z-index: 10;
-  transform: translate(0, -50%);
   display: block;
-  width: 40px;
-  height: 73px;
+  width: 50px;
+  height: 50px;
   padding: 0;
   font-size: 0;
   line-height: 0;
   cursor: pointer;
   border: none;
   outline: none;
-  background: transparent url(img/sprite.png) no-repeat center;
+  background: #000 url(img/sprite.png) no-repeat center;
   opacity: 0.5;
   transition-duration: 0.3s;
 }
 
 .slick-prev {
-  left: 8%;
-  background-position: 0 0;
+  left: -10px;
+  background-position: 18px 7px;
 
-  &:hover, &:focus {
+  &:hover {
+    left: 0;
     outline: none;
     opacity: 1;
   }
@@ -184,10 +196,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 }
 
 .slick-next {
-  right: 8%;
-  background-position: 0 -78px;
+  right: -10px;
+  background-position: 12px -56px;
 
-  &:hover, &:focus {
+  &:hover {
+    right: 0;
     outline: none;
     opacity: 1;
   }
@@ -200,7 +213,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /* Dots */
 .slick-dots {
   position: absolute;
-  bottom: 40px;
+  bottom: 35px;
   display: block;
   width: 100%;
   padding: 0;
@@ -225,17 +238,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
       font-size: 0;
       line-height: 0;
       color: transparent;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(0, 0, 0, 0.5);
       border: 2px solid transparent;
       border-radius: 50%;
       outline: none;
       cursor: pointer;
       transition-duration: 0.3s;
 
-      &:hover, &:focus {
+      &:hover {
         background-color: transparent;
         outline: none;
-        border-color: #d3c1ad;
+        border-color: #fff;
         transform: scale(1.36);
       }
     }
@@ -243,18 +256,75 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
     &.slick-active button {
       background-color: transparent;
       outline: none;
-      border-color: #d3c1ad;
+      border-color: #fff;
       transform: scale(1.36);
     }
+  }
+}
+
+.home-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  text-align: center;
+
+  &-title {
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    display: inline-block;
+    padding: 20px 50px;
+    font-weight: 300;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateX(-50%);
+  }
+}
+
+/*--------------------------------------------------------------
+# Advantages
+--------------------------------------------------------------*/
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 33.3333%;
+    height: 500px;
+    padding: 30px 5%;
+    text-align: center;
+
+    &:nth-child(2) {
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+    }
+  }
+
+  &-photo {
+    margin-bottom: 25px;
+  }
+
+  &-title {
+    font-size: 25px;
+    color: #000;
+  }
+
+  &-desc {
+    margin-top: 7px;
   }
 }
 
 
 
 
-.site-content {
-  margin-top: 150px;
-}
 
 .popup {
   position: fixed;

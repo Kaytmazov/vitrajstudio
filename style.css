@@ -438,6 +438,12 @@ img {
 /*--------------------------------------------------------------
 # Общие стили
 --------------------------------------------------------------*/
+body {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -478,8 +484,15 @@ img {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
   width: 100%;
   background-color: #000;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.site-header.scroll {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .header-top {
@@ -526,31 +539,30 @@ img {
 .slick-prev,
 .slick-next {
   position: absolute;
-  top: 50%;
+  top: 55%;
   z-index: 10;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
   display: block;
-  width: 40px;
-  height: 73px;
+  width: 50px;
+  height: 50px;
   padding: 0;
   font-size: 0;
   line-height: 0;
   cursor: pointer;
   border: none;
   outline: none;
-  background: transparent url(img/sprite.png) no-repeat center;
+  background: #000 url(img/sprite.png) no-repeat center;
   opacity: 0.5;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
 
 .slick-prev {
-  left: 8%;
-  background-position: 0 0;
+  left: -10px;
+  background-position: 18px 7px;
 }
 
-.slick-prev:hover, .slick-prev:focus {
+.slick-prev:hover {
+  left: 0;
   outline: none;
   opacity: 1;
 }
@@ -560,11 +572,12 @@ img {
 }
 
 .slick-next {
-  right: 8%;
-  background-position: 0 -78px;
+  right: -10px;
+  background-position: 12px -56px;
 }
 
-.slick-next:hover, .slick-next:focus {
+.slick-next:hover {
+  right: 0;
   outline: none;
   opacity: 1;
 }
@@ -576,7 +589,7 @@ img {
 /* Dots */
 .slick-dots {
   position: absolute;
-  bottom: 40px;
+  bottom: 35px;
   display: block;
   width: 100%;
   padding: 0;
@@ -603,7 +616,7 @@ img {
   font-size: 0;
   line-height: 0;
   color: transparent;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   border: 2px solid transparent;
   border-radius: 50%;
   outline: none;
@@ -612,10 +625,10 @@ img {
           transition-duration: 0.3s;
 }
 
-.slick-dots li button:hover, .slick-dots li button:focus {
+.slick-dots li button:hover {
   background-color: transparent;
   outline: none;
-  border-color: #d3c1ad;
+  border-color: #fff;
   -webkit-transform: scale(1.36);
           transform: scale(1.36);
 }
@@ -623,13 +636,84 @@ img {
 .slick-dots li.slick-active button {
   background-color: transparent;
   outline: none;
-  border-color: #d3c1ad;
+  border-color: #fff;
   -webkit-transform: scale(1.36);
           transform: scale(1.36);
 }
 
-.site-content {
-  margin-top: 150px;
+.home-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  text-align: center;
+}
+
+.slide-title {
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  display: inline-block;
+  padding: 20px 50px;
+  font-weight: 300;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+/*--------------------------------------------------------------
+# Advantages
+--------------------------------------------------------------*/
+.advantages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.advantages-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 33.3333%;
+      flex-basis: 33.3333%;
+  height: 500px;
+  padding: 30px 5%;
+  text-align: center;
+}
+
+.advantages-item:nth-child(2) {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.advantages-photo {
+  margin-bottom: 25px;
+}
+
+.advantages-title {
+  font-size: 25px;
+  color: #000;
+}
+
+.advantages-desc {
+  margin-top: 7px;
 }
 
 .popup {

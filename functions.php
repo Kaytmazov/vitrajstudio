@@ -65,7 +65,7 @@ if ( ! function_exists( 'vitrajstudio_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
+			'height'      => 63,
 			'width'       => 250,
 			'flex-width'  => true,
 			'flex-height' => true,
@@ -120,11 +120,11 @@ function vitrajstudio_scripts() {
 	if ( is_front_page() ) {
     wp_add_inline_script( 'slick-js', '
       jQuery(".home-slider").slick({ 
-        autoplay: true, 
+
 				dots: true,
 				speed: 1500,
 				fade: true,
-				cssEase: "liner", 
+				pauseOnHover: false,
 				responsive: [
 					{
 						breakpoint: 768,
@@ -191,5 +191,5 @@ add_filter('show_admin_bar', '__return_false');
  * Зарегистрировать размер изображений для слайдера
  */
 if ( function_exists( 'add_image_size' ) ) {
-  add_image_size( 'slider-photo', 1920, 800, true ); //(cropped)
+  add_image_size( 'slider-photo', 1920, 930, true ); //(cropped)
 }

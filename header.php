@@ -53,7 +53,7 @@
 						</svg>
 					</a>
 				</div>
-			</div><!-- .site-branding -->
+			</div><!-- .header-top -->
 			
 			<nav id="site-navigation" class="main-navigation row">
 				<img class="main-navigation__logo" src="<?php echo bloginfo('template_url'); ?>/img/nav-logo.png" width="23" height="26" alt="Логотип">
