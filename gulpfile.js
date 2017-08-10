@@ -46,6 +46,13 @@ gulp.task('svg-sprite', function() {
     .pipe(gulp.dest('img'));
 });
 
+// SVG min
+gulp.task('svg-min', function() {
+  return gulp.src('assets/img/svg/*.svg')
+    .pipe(svgmin())
+    .pipe(gulp.dest('img'));
+});
+
 // Browser Sync
 gulp.task('browser-sync', function() {
   browserSync.init({

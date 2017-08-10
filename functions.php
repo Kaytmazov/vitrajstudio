@@ -120,7 +120,7 @@ function vitrajstudio_scripts() {
 	if ( is_front_page() ) {
     wp_add_inline_script( 'slick-js', '
       jQuery(".home-slider").slick({ 
-
+				autoplay: true,
 				dots: true,
 				speed: 1500,
 				fade: true,
@@ -192,4 +192,70 @@ add_filter('show_admin_bar', '__return_false');
  */
 if ( function_exists( 'add_image_size' ) ) {
   add_image_size( 'slider-photo', 1920, 930, true ); //(cropped)
+}
+
+/**
+ * Произвольный тип записей для "Витражи"
+ */
+if ( ! function_exists( 'vitraj_cp' ) ) {
+// Опишем требуемый функционал
+  function vitraj_cp() {
+
+    $labels = array(
+      'name'                => _x( 'Витражи', 'Post Type General Name', 'vitraj' ),
+      'singular_name'       => _x( 'Каталог', 'Post Type Singular Name', 'vitraj' ),
+      'menu_name'           => __( 'Витражи', 'vitraj' ),
+      'all_items'           => __( 'Все витражи', 'vitraj' ),
+      'add_new_item'        => __( 'Добавить новую категорию', 'vitraj' ),
+      'add_new'             => __( 'Добавить категорию', 'vitraj' ),
+      'edit_item'           => __( 'Редактировать категорию', 'vitraj' ),
+      'view_item'           => __( 'Посмотреть категорию', 'vitraj' ),
+      'update_item'         => __( 'Обновить категорию', 'vitraj' ),
+      'search_items'        => __( 'Найти категорию', 'vitraj' ),
+      'not_found'           => __( 'Категория не найдена', 'vitraj' ),
+      'not_found_in_trash'  => __( 'Категория не найдена в корзине', 'vitraj' ),
+    );
+    $args = array(
+      'labels'              => $labels,
+      'supports'            => array( 'title', 'thumbnail', 'editor' ),
+      'public'              => true,
+      'menu_position'       => 20,
+      'menu_icon'           => 'dashicons-images-alt',
+    );
+    register_post_type( 'vitraj', $args );
+  }
+  add_action( 'init', 'vitraj_cp', 0 ); // инициализируем
+}
+
+/**
+ * Произвольный тип записей для "Панно"
+ */
+if ( ! function_exists( 'panno_cp' ) ) {
+// Опишем требуемый функционал
+  function panno_cp() {
+
+    $labels = array(
+      'name'                => _x( 'Панно', 'Post Type General Name', 'panno' ),
+      'singular_name'       => _x( 'Каталог', 'Post Type Singular Name', 'panno' ),
+      'menu_name'           => __( 'Панно', 'panno' ),
+      'all_items'           => __( 'Все Панно', 'panno' ),
+      'add_new_item'        => __( 'Добавить новую категорию', 'panno' ),
+      'add_new'             => __( 'Добавить категорию', 'panno' ),
+      'edit_item'           => __( 'Редактировать категорию', 'panno' ),
+      'view_item'           => __( 'Посмотреть категорию', 'panno' ),
+      'update_item'         => __( 'Обновить категорию', 'panno' ),
+      'search_items'        => __( 'Найти категорию', 'panno' ),
+      'not_found'           => __( 'Категория не найдена', 'panno' ),
+      'not_found_in_trash'  => __( 'Категория не найдена в корзине', 'panno' ),
+    );
+    $args = array(
+      'labels'              => $labels,
+      'supports'            => array( 'title', 'thumbnail', 'editor' ),
+      'public'              => true,
+      'menu_position'       => 20,
+      'menu_icon'           => 'dashicons-images-alt',
+    );
+    register_post_type( 'panno', $args );
+  }
+  add_action( 'init', 'panno_cp', 0 ); // инициализируем
 }

@@ -39,6 +39,15 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 
+.section-title {
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+}
+
 p {
   margin-bottom: 10px;
 }
@@ -477,6 +486,14 @@ body {
   overflow: hidden;
 }
 
+.site-content {
+  margin-top: 140px;
+}
+
+.home .site-content {
+  margin-top: 0;
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -528,7 +545,7 @@ body {
 # Slick Slider
 --------------------------------------------------------------*/
 .slick-loading .slick-list {
-  background: #fff url("libs/slick/ajax-loader.gif") center center no-repeat;
+  background: #fff url(libs/slick/ajax-loader.gif) center center no-repeat;
 }
 
 .slick-slide:focus {
@@ -714,6 +731,66 @@ body {
 
 .advantages-desc {
   margin-top: 7px;
+  font-weight: 300;
+}
+
+/*--------------------------------------------------------------
+# vitraj-list
+--------------------------------------------------------------*/
+.vitraj-list {
+  margin-bottom: 50px;
+}
+
+.vitraj-list .col-sm-6 {
+  padding: 0;
+}
+
+.vitraj-item {
+  position: relative;
+  display: block;
+  height: 400px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.vitraj-item:hover, .vitraj-item:focus {
+  color: #fff;
+}
+
+.vitraj-item:hover .title, .vitraj-item:focus .title {
+  top: 0;
+}
+
+.vitraj-item img {
+  position: absolute;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.vitraj-item .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .popup {
