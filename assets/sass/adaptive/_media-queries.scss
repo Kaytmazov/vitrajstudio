@@ -1,0 +1,438 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px) {
+	
+	body {
+		font-size: 14px;
+	}
+
+	.section-title {
+		margin-bottom: 15px;
+		font-size: 36px;
+	}
+
+	.page-title {
+		margin-bottom: 5px;
+	}
+
+	.slide-title {
+		bottom: 30px;
+		padding: 10px 30px;
+		font-size: 18px;
+	}
+
+	.slick-dots {
+		bottom: 15px;
+	}
+
+	.advantages {
+
+		&-item {
+			padding: 50px 2%;
+		}
+
+		&-photo {
+			margin-bottom: 10px;
+		}
+
+		&-title {
+			font-size: 22px;
+		}
+	}
+
+	.products-list {
+		margin-bottom: 20px;
+	}
+
+	.products-item {
+		height: 250px;
+
+		.title {
+			font-size: 18px;
+		}
+	}
+
+	.panno-item {
+		height: 300px;
+	}
+
+	.location {
+		margin-top: 80px;
+	}
+
+	.map {
+		height: 500px;
+
+		.contacts {
+			width: 360px;
+			padding: 40px;
+
+			&-title {
+				font-size: 20px;
+			}
+		}
+		
+		&-phones {
+			margin-bottom: 30px;
+		
+			a {
+				font-size: 25px;
+			}
+		}
+
+		&-address p {
+			margin-top: 0;
+			font-size: 16px;
+		}
+	}
+
+	.social-btns {
+		margin-top: 25px;
+		margin-bottom: 30px;
+
+		.icon {
+			margin: 0 5px;
+		}
+	}
+
+	.icon-vk, .icon-instagram, .icon-fb {
+		svg {
+			width: 55px;
+			height: 55px;
+		}
+	}
+
+	.site-footer {
+		padding: 15px 0;
+	}
+
+	.popup-content {
+		padding: 60px 20px;
+	}
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px) {
+
+	.section-title {
+		font-size: 30px;
+	}
+
+	.home .site-content {
+		margin-top: 100px;
+	}
+
+	.slick-prev, .slick-next {
+		top: 48%;
+	}
+
+	.advantages {
+		&-item {
+			padding: 35px 2%;
+		}
+
+		&-title {
+			font-size: 16px;
+		}
+
+		&-desc {
+			font-size: 12px;
+		}
+	}
+
+	.panno-item {
+		height: 280px;
+	}
+
+	.location {
+		margin-top: 60px;
+	}
+
+	.map {
+		.contacts {
+			width: 300px;
+			padding: 40px 30px;
+
+			&-title {
+				font-size: 18px;
+			}
+		}
+
+		&-phones a {
+			font-size: 22px;
+		}
+	}
+
+	.popup {
+	
+		&-content {
+			width: 650px;
+			padding: 40px 0;
+		}
+
+		&-title {
+			margin-bottom: 30px;
+		}
+
+		&-box {
+			padding: 30px 15px;
+
+			&-valut {
+				font-size: 12px;
+			}
+		}
+	}
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+
+	.section-title {
+		font-size: 28px;
+	}
+
+	.main-navigation li {
+		margin: 0 15px;
+	}
+
+	.slide-title {
+		padding: 5px 15px;
+		font-size: 16px;
+	}
+
+	.advantages {
+		display: block;
+		
+		&-item {
+			flex-basis: 50%;
+			padding-bottom: 0;
+
+			&:nth-child(2) {
+				border: none;
+			}
+		}
+
+		&.slick-initialized .advantages-item {
+			padding-bottom: 35px;
+		}
+
+		&-photo img {
+			margin: 0 auto;
+		}
+
+		&-title {
+			font-size: 20px;
+		}
+
+		&-desc {
+			font-size: 14px;
+		}
+
+		.slick-dots {
+			bottom: 15px;
+
+			li button:hover, 
+			li.slick-active button {
+				border-color: #5062d9;
+			}
+		}
+	}
+
+	.map {
+		height: 400px;
+
+		.contacts {
+			width: 250px;
+			padding: 30px 15px;
+
+			&-title {
+				font-size: 16px;
+			}
+		}
+
+		&-phones a {
+			font-size: 18px;
+		}
+
+		&-address p {
+			font-size: 14px;
+		}
+	}
+
+	.icon-vk, .icon-instagram, .icon-fb {
+		svg {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	.site-footer {
+		padding: 10px 0;
+	}
+
+	.popup {
+
+		&-content {
+			top: 45px;
+			transform: translateX(-50%);
+			width: 90%;
+			padding: 25px 0;
+		}
+
+		&-title {
+			margin-bottom: 10px;
+		}
+
+		&-box {
+			padding: 10px 15px;
+
+			&-title {
+				margin-top: 5px;
+			}
+		}
+
+		.social-btns .icon svg {
+			width: 35px;
+			height: 35px;
+		}
+	}
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 575px) {
+
+	.section-title {
+		font-size: 24px;
+	}
+
+	.custom-logo-link img {
+		width: 220px;
+	}
+
+	.site-header.scroll .header-top {
+		margin-top: -86px;
+	}
+
+	.header-top .icon-tel {
+		display: none;
+	}
+
+	.main-navigation {
+		padding: 13px 0;
+
+		ul {
+			margin-top: 30px;
+
+			ul {
+				top: 170%;
+				margin-top: 0;
+				padding-top: 0;
+				text-align: center;
+				border: 1px solid #fff;
+
+				&::before {
+					content: '';
+					position: absolute;
+					top: -10px;
+					left: 50%;
+					margin-left: -10px;
+					border: 10px solid transparent;
+					border-bottom-color: #fff;
+					border-top-width: 0;
+				}
+
+				a {
+					width: auto;
+				}
+			}
+
+			li:hover > ul,
+			li.focus > ul {
+				left: 0;
+				right: 0;
+			}
+		}
+
+		li {
+			display: block;
+			margin: 20px;
+		}
+
+		a {
+			font-size: 14px;
+		}
+		
+		.icon-tel {
+			top: 10px;
+			right: 10px;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		&__logo {
+			top: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	.slide-title {
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 0;
+		transform: none;
+		font-size: 14px;
+	}
+
+	.home .site-content {
+		margin-top: 130px;
+	}
+
+	.advantages {
+		
+		&-item {
+			padding: 35px 15px;
+			flex-basis: 100%;
+		}	
+	}
+
+	.products-item {
+		height: 160px;
+
+		.title {
+			padding: 5px;
+			font-size: 13px;
+		}
+	}
+
+	.location {
+		margin-top: 35px;
+
+		.section-title {
+			display: none;
+		}
+	}
+
+	.map {
+		height: auto;
+
+		.contacts {
+			position: static;
+			width: 100%;
+			background-color: #000;
+		}
+
+		.ymaps-2-1-55-map {
+			height: 300px;
+		}
+	}
+
+	.page-template-tpl_contacts-page .map {
+		height: 400px;
+	}
+}

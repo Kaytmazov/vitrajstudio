@@ -43,6 +43,18 @@ function vitrajstudio_customize_register( $wp_customize ) {
       'type'     => 'text' // текстовое поле
     )
   );
+  // Телефон 2
+  $wp_customize->add_setting( 'phone_2', array(
+    'default'            => '8 (8722) 92-44-11', // текст по умолчанию
+    'transport'          => 'refresh'
+  )
+);
+$wp_customize->add_control( 'phone_2', array(
+    'section'  => 'contacts_options', // id секции
+    'label'    => 'Телефон 2',
+    'type'     => 'text' // текстовое поле
+  )
+);
   // Адрес
   $wp_customize->add_setting( 'street', array(
       'default'            => 'г. Махачкала, ул.Энгельса, 1Д', // текст по умолчанию
@@ -56,12 +68,12 @@ function vitrajstudio_customize_register( $wp_customize ) {
     )
   );
   // Email
-  $wp_customize->add_setting( 'mail', array(
+  $wp_customize->add_setting( 'email', array(
       'default'            => 'vitrajstudio.vs@yandex.ru', // текст по умолчанию
       'transport'          => 'refresh'
     )
   );
-  $wp_customize->add_control( 'mail', array(
+  $wp_customize->add_control( 'email', array(
       'section'  => 'contacts_options', // id секции
       'label'    => 'E-mail',
       'type'     => 'text' // текстовое поле

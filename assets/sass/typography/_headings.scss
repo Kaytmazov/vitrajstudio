@@ -1,12 +1,16 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-weight: 300;
 }
 
 .section-title {
 	margin-bottom: 30px;
 	font-size: 50px;
-	font-weight: 300;
 	text-align: center;
 	text-transform: uppercase;
 	color: #000;
+}
+
+.page-title {
+	margin-bottom: 10px;
 }

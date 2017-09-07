@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="400px" height="400px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
     <title>Facebook</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M20,1 L6,1 C3.239,1 1,3.239 1,6 L1,20 C1,22.761 3.239,25 6,25 L20,25 C22.762,25 25,22.761 25,20 L25,6 C25,3.239 22.762,1 20,1 Z M17,8 L15.076,8 C14.461,8 14,8.252 14,8.889 L14,10 L17,10 L16.762,13 L14,13 L14,21 L11,21 L11,13 L9,13 L9,10 L11,10 L11,8.077 C11,6.055 12.064,5 14.461,5 L17,5 L17,8 Z" id="Shape" stroke="#FFFFFF" fill-rule="nonzero"></path>
+    <g id="fb">
+        <path d="M266.333333,117 L234.266667,117 C224.016667,117 216.333333,121.2 216.333333,131.816667 L216.333333,150.333333 L266.333333,150.333333 L262.366667,200.333333 L216.333333,200.333333 L216.333333,333.666667 L166.333333,333.666667 L166.333333,200.333333 L133,200.333333 L133,150.333333 L166.333333,150.333333 L166.333333,118.283333 C166.333333,84.5833333 184.066667,67 224.016667,67 L266.333333,67 L266.333333,117 Z" id="Shape-path"></path>
+        <rect id="Rectangle" x="7.5" y="7.5" width="385" height="385" rx="85"></rect>
     </g>
 </svg>

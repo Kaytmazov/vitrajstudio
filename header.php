@@ -22,8 +22,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vitrajstudio' ); ?></a>
-
 	<header id="masthead" class="site-header">
 		<?php 
 		if ( is_front_page() ) : ?>
@@ -32,10 +30,7 @@
 		endif; ?>
 		<div class="container-fluid">
 			<div class="header-top row">
-				<div class="col-sm-3">
-
-				</div>
-				<div class="site-branding col-sm-6">
+				<div class="site-branding">
 					<?php
 					if( $logo = get_custom_logo() ) :
 						echo $logo;
@@ -46,29 +41,34 @@
 					<?php
 					endif; ?>
 				</div>
-				<div class="header-feedback col-sm-3">
-					<a class="icon icon-tel" href="tel:<?php echo get_theme_mod( 'phone' ); ?>">
-						<svg>
-							<use xlink:href="<?php echo bloginfo('template_url'); ?>/img/sprite.svg#icon-phone"></use>
-						</svg>
-					</a>
-				</div>
+				<button type="button" class="icon icon-tel">
+					<svg>
+						<use xlink:href="<?php echo bloginfo('template_url'); ?>/img/sprite.svg#icon-phone"></use>
+					</svg>
+				</button>
 			</div><!-- .header-top -->
 			
 			<nav id="site-navigation" class="main-navigation row">
 				<img class="main-navigation__logo" src="<?php echo bloginfo('template_url'); ?>/img/nav-logo.png" width="23" height="26" alt="Логотип">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vitrajstudio' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'primary-menu',
 					) );
 				?>
-				<a class="icon icon-tel" href="tel:<?php echo get_theme_mod( 'phone' ); ?>">
+				<button type="button" class="icon icon-tel">
 					<svg>
 						<use xlink:href="<?php echo bloginfo('template_url'); ?>/img/sprite.svg#icon-phone"></use>
 					</svg>
-				</a>
+					</button>
 			</nav><!-- #site-navigation -->
 		</div><!-- #container-fluid -->
 	</header><!-- #masthead -->

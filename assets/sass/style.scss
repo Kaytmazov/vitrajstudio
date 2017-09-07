@@ -66,29 +66,86 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Общие стили
 --------------------------------------------------------------*/
+html {
+  position: relative;
+}
+
 body {
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
 }
 
+a {
+  &:hover, &:focus {
+    color: #3ca5ff;
+    text-decoration: none;
+  }
+}
+
 .icon {
   display: inline-block;
+  padding: 0;
+  font-size: 0;
+  background: none;
+  border: none;
+  outline: none;
   vertical-align: middle;
 
+  &:focus {
+    outline: none;
+  }
+
   svg {
-    width: 25px;
-    height: 25px;
-    fill: #fff;
     transition-duration: 0.3s;
   }
 
-  &-tel {
-    margin-top: 20px;
+  &-phone, &-map, &-email {
+    
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: #fff;
+    }
+  }
 
-    &:hover svg, 
-    &:focus svg {
-      fill: #41c8f5;
+  &-vk, &-instagram, &-fb {
+
+    svg {
+      width: 70px;
+      height: 70px;
+      stroke: #fff;
+      stroke-width: 15;
+      fill: none;
+    }
+  }
+
+  &-instagram:hover svg {
+    stroke: #e43f85!important;
+  }
+
+  &-vk:hover svg {
+    stroke: #507299!important;
+  }
+
+  &-fb:hover svg {
+    stroke: #3b5998!important;
+  }
+
+  &-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke: rgba(255, 255, 255, 0.5);
+      stroke-width: 7;
+    }
+
+    &:hover svg {
+      stroke: rgba(255,2550, 255, 1);
     }
   }
 }
@@ -112,9 +169,7 @@ body {
   margin-top: 0;
 }
 
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
+/* ====================== Header ====================== */
 .site-header {
   position: fixed;
   top: 0;
@@ -126,23 +181,44 @@ body {
 
   &.scroll {
     background-color: rgba(0, 0, 0, 0.8);
+
+    .main-navigation__logo, .icon-tel {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .header-top {
+      margin-top: -94px;
+    }
+  }
+
+  .icon-tel {
+
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: #fff;
+    }
+
+    &:hover svg, 
+    &:focus svg {
+      fill: #41c8f5;
+    }
   }
 }
 
 .header-top {
+  position: relative;
   padding: 15px 50px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #212121;
   transition-duration: 0.3s;
-}
 
-.site-header.scroll .header-top {
-  margin-top: -94px;
-}
-
-.site-header.scroll .main-navigation__logo, 
-.site-header.scroll .icon-tel {
-  opacity: 1;
-  visibility: visible;
+  .icon-tel {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+  }
 }
 
 .site-branding {
@@ -153,13 +229,7 @@ body {
   width: 250px;
 }
 
-.header-feedback {
-  text-align: right;
-}
-
-/*--------------------------------------------------------------
-# Slick Slider
---------------------------------------------------------------*/
+/* ====================== Slick Slider ====================== */
 .slick-loading .slick-list {
   background: #fff url(libs/slick/ajax-loader.gif) center center no-repeat;
 }
@@ -285,20 +355,19 @@ body {
     bottom: 70px;
     display: inline-block;
     padding: 20px 50px;
-    font-weight: 300;
+    font-size: 24px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.8);
     transform: translateX(-50%);
   }
 }
 
-/*--------------------------------------------------------------
-# Advantages
---------------------------------------------------------------*/
+/* ====================== Advantages ====================== */
 .advantages {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: flex-start;
 
   &-item {
     display: flex;
@@ -306,8 +375,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-basis: 33.3333%;
-    height: 500px;
-    padding: 30px 5%;
+    padding: 130px 5%;
     text-align: center;
 
     &:nth-child(2) {
@@ -322,27 +390,25 @@ body {
 
   &-title {
     font-size: 25px;
+    font-weight: 400;
     color: #000;
   }
 
   &-desc {
     margin-top: 7px;
-    font-weight: 300;
   }
 }
 
-/*--------------------------------------------------------------
-# vitraj-list
---------------------------------------------------------------*/
-.vitraj-list {
+/* ====================== products-list ====================== */
+.products-list {
   margin-bottom: 50px;
 
-  .col-sm-6 {
+  [class^="col-"] {
     padding: 0;
   }
 }
 
-.vitraj-item {
+.products-item {
   position: relative;
   display: block;
   height: 400px;
@@ -374,37 +440,201 @@ body {
     bottom: 0;
     margin: 0;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
     font-size: 22px;
-    font-weight: 300;
     text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
     transition-duration: 0.3s;
   }
 }
 
+.panno-item {
+  height: 500px;
+}
 
+/* ====================== Контакты и местонахождение ====================== */
+.location {
+  margin-top: 100px;
+}
 
+.map {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 700px;
+  background-color: #f7f1d9;
 
+  .contacts {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 500px;
+    padding: 70px 40px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
 
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 90px;
-  background-color: #000;
-  box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.3);
+    &-title {
+      position: relative;
+      margin-top: 0;
+      padding-bottom: 10px;
+      font-size: 26px;
+      text-transform: uppercase;
 
-  &.closed {
-    display: none;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -25px;
+        width: 50px;
+        height: 1px;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &-phones {
+    margin-bottom: 50px;
+  
+    a {
+      font-size: 35px;
+      color: #ffffff;
+    }
+  }
+
+  &-address p {
+    margin-bottom: 0;
+    font-size: 20px;
   }
 }
 
 .social-btns {
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 50px;
   text-align: center;
 
   .icon {
-    margin: 0 5px;
+    margin: 0 15px;
   }
 }
+
+/* ====================== Footer ====================== */
+.site-footer {
+  padding: 20px 0;
+  color: #767676;
+  background-color: #000;
+}
+
+.copyright {
+  margin: 0;
+  text-align: center;
+}
+
+/* ====================== Модальное окно ====================== */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  
+  &.open {
+    display: block;
+    animation: popup 0.3s forwards;
+  }
+
+  &-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    padding: 80px 20px;
+    background-color: #000;
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .overlay {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &-box {
+    padding: 40px;
+    text-align: center;
+
+    &:nth-child(2) {
+      border-left: 1px solid #313131;
+      border-right: 1px solid #313131;
+    }
+
+    &-title {
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #656565;
+    }
+
+    &-value {
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+  }
+
+  .social-btns {
+    margin-bottom: 0;
+
+    .icon svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+@keyframes popup {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.catalog-gallery {
+  margin-top: 40px;
+}
+
+.contacts-page {
+
+  [class^="col-"] {
+    text-align: center;
+  }
+
+  .icon-vk, .icon-instagram, .icon-fb {
+    
+    svg {
+      stroke: #000;
+    }
+  }
+
+  .map-phones a {
+    color: #000;
+  }
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+@import "adaptive/media-queries";

@@ -114,8 +114,8 @@ function vitrajstudio_scripts() {
 
 	wp_enqueue_style( 'vitrajstudio-style', get_stylesheet_uri() );
 
-	wp_register_script('slick-js', get_template_directory_uri() . '/libs/slick/slick.min.js', array('jquery'), '1.6.0', true);
-  wp_enqueue_script('slick-js');
+	wp_register_script( 'slick-js', get_template_directory_uri() . '/libs/slick/slick.min.js', array('jquery'), '1.6.0', true );
+  wp_enqueue_script( 'slick-js' );
 
 	if ( is_front_page() ) {
     wp_add_inline_script( 'slick-js', '
@@ -132,12 +132,39 @@ function vitrajstudio_scripts() {
 							arrows: false
 						}
 					},
+					{
+						breakpoint: 575,
+						settings: {
+							arrows: false, 
+							dots: false,
+							draggable: true,
+							fade: false, 
+							speed: 700
+						}
+					},
+				]
+			});
+			jQuery(".advantages").slick({ 
+				mobileFirst: true,
+				dots: true,
+				arrows: false,
+				pauseOnHover: false,
+				responsive: [
+					{
+						breakpoint: 767,
+						settings: "unslick"
+					},
 				]
       });'
     );
-  }
+	}
 
-	wp_enqueue_script( 'app-js', get_template_directory_uri() . '/assets/js/dev/app.js', array('jquery'), null, true );
+	wp_enqueue_script( 'app-js', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), null, true );
+
+	wp_register_script( 'api-maps', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', array(), '2.1', true );
+	wp_enqueue_script( 'api-maps' );
+	
+	wp_enqueue_script( 'map-js', get_template_directory_uri() . '/assets/js/map.js', array('api-maps'), null, true );
 
 	wp_enqueue_script( 'vitrajstudio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

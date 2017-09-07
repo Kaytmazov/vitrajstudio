@@ -20,6 +20,15 @@ img {
 	height: auto;
 }
 
+.page-thumb {
+	margin-bottom: 30px;
+	text-align: center;
+
+	img {
+		width: 100%;
+	}
+}
+
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;

@@ -36,7 +36,7 @@ get_header(); ?>
 			</div>
 
 			<!-- vitraj-list -->
-			<section class="vitraj-list container-fluid">
+			<section class="vitraj-list products-list container-fluid">
 				<h2 class="section-title">Витражи</h2>
 				<div class="row">
 					<?php
@@ -48,8 +48,8 @@ get_header(); ?>
 					) );
 					if ( $loop->have_posts() ) :
 						while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							<div class="col-sm-6 col-md-4">
-								<a href="<?php the_permalink(); ?>" class="vitraj-item">
+							<div class="col-xs-6 col-md-4">
+								<a href="<?php the_permalink(); ?>" class="vitraj-item products-item">
 									<?php the_post_thumbnail('large'); ?>
 									<h3 class="title"><?php the_title(); ?></h3>
 								</a>
@@ -59,7 +59,7 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<section class="vitraj-list container-fluid">
+			<section class="panno-list products-list container-fluid">
 				<h2 class="section-title">Панно</h2>
 				<div class="row">
 					<?php
@@ -72,7 +72,7 @@ get_header(); ?>
 					if ( $loop->have_posts() ) :
 						while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<div class="col-sm-6">
-								<a href="<?php the_permalink(); ?>" class="vitraj-item">
+								<a href="<?php the_permalink(); ?>" class="panno-item products-item">
 									<?php the_post_thumbnail('full'); ?>
 									<h3 class="title"><?php the_title(); ?></h3>
 								</a>

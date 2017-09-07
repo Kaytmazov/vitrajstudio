@@ -19,3 +19,12 @@
 .gallery-caption {
 	display: block;
 }
+
+.wc-gallery-captions-onhover .gallery-caption {
+	color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.7);
+
+	p {
+		text-align: center;
+	}
+}
